@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Catequesis')
+@section('title', 'Catecumenos')
 
 @section('content_header')
     <h1>Catequesis - Confirmación</h1>

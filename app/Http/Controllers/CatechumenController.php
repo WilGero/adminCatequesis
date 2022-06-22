@@ -14,9 +14,9 @@ class CatechumenController extends Controller
      */
     public function index()
     {   
-        $catechumens=Catechumen::paginate();
+        $catechumens=Catechumen::all();
         //
-        return view('catechumens.index',compact('catechumens'));
+        return view('admin.catechumens.index',compact('catechumens'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CatechumenController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.catechumens.create');
     }
 
     /**
@@ -37,7 +37,15 @@ class CatechumenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $catechumen=new Catechumen();
+        $catechumen->name=$request->name;
+        $catechumen->surname=$request->surname;
+        $catechumen->ci=$request->ci;
+        $catechumen->birth=$request->birth;
+
+        $catechumen->save();
+
+        return redirect()->route('catechumens.show',compact('catechumen'));
     }
 
     /**
@@ -46,9 +54,10 @@ class CatechumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($catechumen)
+    public function show(Catechumen $catechumen)
     {
-        //
+        return view('admin.catechumens.show',compact('catechumen'));
+
     }
 
     /**
@@ -57,8 +66,9 @@ class CatechumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($catechumen)
+    public function edit(Catechumen $catechumen)
     {
+        return view('admin.catechumens.edit',compact('catechumen'));
         //
     }
 
@@ -69,9 +79,16 @@ class CatechumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Catechumen $catechumen)
     {
-        //
+        $catechumen->name=$request->name;
+        $catechumen->surname=$request->surname;
+        $catechumen->ci=$request->ci;
+        $catechumen->birth=$request->birth;
+
+        $catechumen->save();
+
+        return redirect()->route('catechumens.show',compact('catechumen'));
     }
 
     /**
@@ -80,8 +97,9 @@ class CatechumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($catechumen)
+    public function destroy(Catechumen $catechumen)
     {
-        //
+        $catechumen->delete();
+        return redirect()->route('catechumens.index');
     }
 }

@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        \App\Models\Catechumen::factory(15)->create();
     }
 }

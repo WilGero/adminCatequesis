@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CatechumenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Rutas para la abla catecumenos
+
+Route::resource('catechumens', CatechumenController::class);
+
 
 Route::get('/', function () {
     return view('welcome');

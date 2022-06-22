@@ -14,8 +14,8 @@
  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
      
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+      <form action="{{route('catechumens.index')}}" class="d-flex" method="get">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="texto" value="{{$texto}}">
         <button class="btn btn-outline-info" type="submit">Buscar</button>
       </form>
       <a href="{{route('catechumens.create')}}"><button class="btn btn-success m-4" type="submit">Registrar Catecumeno</button></a>
@@ -36,7 +36,7 @@
                 <th scope="col">Nombres</th>
                 <th scope="col">Apellidos</th>
                 <th scope="col">ci</th>
-                <th scope="col">Edad</th>
+                <th scope="col">Celular</th>
               </tr>
             </thead>
             <tbody>
@@ -47,7 +47,7 @@
                         <td>{{$catechumen->name}}</td>
                         <td>{{$catechumen->surname}}</td>
                         <td>{{$catechumen->ci}}</td>
-                        <td>{{$catechumen->edad}}</td>
+                        <td>{{$catechumen->phone}}</td>
                         <td>
                          <a href="{{route('catechumens.show',$catechumen)}}">
                           <button type="button" class="btn btn-info">Mostrar</button>  
@@ -58,10 +58,10 @@
                         </td>
                         {{-- <a href="{{route('catecumenos.show',$catecumeno->id)}}">{{$catecumeno->name}}</a>     --}}
                     </tr>
-                @endforeach
-              
+                @endforeach   
             </tbody>
           </table>
+          {{$catechumens->links()}}
          
     </div>
   </div>

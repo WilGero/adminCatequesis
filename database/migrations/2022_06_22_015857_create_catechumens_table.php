@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname');
             $table->integer('ci');
-            $table->date('birth')->nullable();
-            $table->integer('age')->nullable();
+            $table->integer('phone');
+            $table->date('birth');
+            
             $table->timestamps();
         });
     }

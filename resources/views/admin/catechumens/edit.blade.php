@@ -4,16 +4,13 @@
 
 
 @section('content_header')
-    <h1>Lista de Catecumenos</h1>
+    <h1>Editar catecumeno</h1>
 @stop
 
 @section('content')
-<div class="card">
-    <div class="card-header">
-      Catecumeno
-    </div>
+<div class="container card">
     <div class="card-body">
-      <h5 class="card-title">Editar Catecumeno</h5>
+      <h5 class="card-title">Editar datos:</h5>
       <p class="card-text">
         <form action="{{route('catechumens.update',$catechumen)}}" method='post'>
             @csrf
@@ -33,13 +30,26 @@
                 <input type="text" class="form-control" name="ci" value="{{$catechumen->ci}}">
             </div>
 
+            <div class="mb-3">
+                <label  class="form-label">Celular</label>
+                <input type="text" class="form-control" name="phone" value="{{$catechumen->phone}}">
+            </div>
 
               <div class="mb-3">
                 <label  class="form-label">Fecha de Nacimiento</label>
                 <input type="date" class="form-control" name="birth" value="{{$catechumen->birth}}">
               </div>
              
-              <button type="submit" class="btn btn-success">Actualizar</button>
+              <div class="form-group row">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success">Actualizar</button>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <a  class="btn btn-secondary" href="{{route('catechumens.show',$catechumen)}}" role="button" >Cancelar</a>
+                </div>
+            </div>   
         </form>
       </p>
     </div>

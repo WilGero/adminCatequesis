@@ -105,7 +105,7 @@ return [
     'classes_auth_card' => 'bg-gradient-dark',
     'classes_auth_header' => '',
     'classes_auth_body' => 'bg-gradient-dark',
-    'classes_auth_footer' => 'text-center d-none',
+    'classes_auth_footer' => 'text-center',
     'classes_auth_icon' => 'fa-fw text-light',
     'classes_auth_btn' => 'btn-flat btn-light',
 
@@ -122,8 +122,8 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
-    'classes_brand_text' => '',
+    'classes_brand' => 'bg-white',
+    'classes_brand_text' => 'text-blue',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
@@ -234,7 +234,7 @@ return [
 
         [
             'text' => 'Catecumenos',
-            'url' =>'#',
+            'route' =>'catechumens.index',
             'topnav' =>true
         ],
 
@@ -254,6 +254,7 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        ['header' => 'Vistas'],
         [
             'text' => 'Catecumenos',
             'route'  => 'catechumens.index',
@@ -282,21 +283,22 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
-        ['header' => 'Configuración'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+        // ['header' => 'Configuración'],
         // [
-        //     // 'text'    => 'multilevel',
-        //     'text'    => false,
-        //     // 'icon'    => 'fas fa-fw fa-share',
+        //     'text' => 'profile',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
+        //
+        // [
+        //     'text'    => 'multilevel',
+        //     'text'    => true,
+        //     'icon'    => 'fas fa-fw fa-share',
         //     'icon'    => false,
         //     'submenu' => [
         //         [

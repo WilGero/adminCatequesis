@@ -4,7 +4,7 @@
 
 
 @section('content_header')
-    <h1>Lista de Catecumenos</h1>
+    <h1>Mostrar catecumeno</h1>
 @stop
 
 @section('content')
@@ -39,13 +39,21 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
+                            <div class="col-md-6">
+                                <label class="form-control">{{ $catechumen->phone }}</label>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group row">
                             <label for="birth" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de Nacimiento') }}</label>
                             <div class="col-md-6">
                                 <label class="form-control">{{ $catechumen->birth }}</label>
                             </div>
                         </div>
 
-                    
+                 
 
                       
 

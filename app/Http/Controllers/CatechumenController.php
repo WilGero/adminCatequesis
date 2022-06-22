@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Catechumen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CatechumenController extends Controller
 {
@@ -12,11 +13,16 @@ class CatechumenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {   
-        $catechumens=Catechumen::all();
+        $texto=trim($request->get('texto'));
+        $catechumens=Catechumen::where('surname','LIKE','%'.$texto.'%')
+                    ->orwhere('ci','LIKE','%'.$texto.'%')
+                    ->orderBy('surname','asc')->paginate(6);
+
+        // $catechumens=Catechumen::orderBy('surname','asc')->paginate(5);
         //
-        return view('admin.catechumens.index',compact('catechumens'));
+        return view('admin.catechumens.index',compact('catechumens','texto'));
     }
 
     /**
@@ -41,11 +47,14 @@ class CatechumenController extends Controller
         $catechumen->name=$request->name;
         $catechumen->surname=$request->surname;
         $catechumen->ci=$request->ci;
+        $catechumen->phone=$request->phone;
         $catechumen->birth=$request->birth;
+        // $catechumen->
+        // DB::raw('selec')
 
         $catechumen->save();
 
-        return redirect()->route('catechumens.show',compact('catechumen'));
+        return redirect()->route('catechumens.show',compact('catechumen'));  
     }
 
     /**
@@ -84,6 +93,7 @@ class CatechumenController extends Controller
         $catechumen->name=$request->name;
         $catechumen->surname=$request->surname;
         $catechumen->ci=$request->ci;
+        $catechumen->phone=$request->phone;
         $catechumen->birth=$request->birth;
 
         $catechumen->save();

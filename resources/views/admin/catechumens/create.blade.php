@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-<div class="card">
+<div class="card container">
     <div class="card-body">
       <h5 class="card-title">Datos:</h5>
       <p class="card-text">
@@ -29,13 +29,28 @@
                 <input type="text" class="form-control" name="ci" >
             </div>
 
+            <div class="mb-3">
+                <label  class="form-label">Celular</label>
+                <input type="text" class="form-control" name="phone" >
+            </div>
+
 
               <div class="mb-3">
                 <label  class="form-label">Fecha de Nacimiento</label>
                 <input type="date" class="form-control" name="birth">
               </div>
              
-              <button type="submit" class="btn btn-success">Registrar</button>
+
+              <div class="form-group row">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-success">Registrar</button>
+                </div> 
+
+
+                <div class="col-md-3">
+                    <a  class="btn btn-secondary" href="{{route('catechumens.index')}}" role="button" >Cancelar</a>
+                </div>
+            </div>    
         </form>
       </p>
     </div>

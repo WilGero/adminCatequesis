@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatechumenController;
-
+use App\Http\Controllers\CatechismsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,12 @@ use App\Http\Controllers\CatechumenController;
 //Rutas para la abla catecumenos
 
 Route::resource('catechumens', CatechumenController::class);
+Route::resource('catechisms', CatechismsController::class);
+
+Route::get('asistencias/{catechism}', [CatechismsController::class, 'asistencias'])->name('asistencias');
+Route::get('registrarAsistencia/{catechism}', [CatechismsController::class, 'registrarAsistencia'])->name('registrarAsistencia');
+
+Route::delete('refrescar', [CatechismsController::class, 'refrescar'])->name('refrescar');
 
 
 Route::get('/', function () {
@@ -29,3 +35,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

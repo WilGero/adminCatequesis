@@ -3,7 +3,7 @@
 @section('title', 'Catecumenos')
 
 @section('content_header')
-    <h1>Catequesis - Confirmación</h1>
+    <h1 class="text-center fw-bolder">CATEQUESIS DE CONFIRMACIÓN - PARROQUIA INMACULADA CONCEPCIÓN VINTO</h1>
 @stop
 
 @section('content')
@@ -27,7 +27,7 @@
                     <div class="card-body">
                       <h5 class="card-title">GESTIONAR CATEQUESIS</h5>
                       <p class="card-text"></p>
-                      <a href="{{route('catechumens.index')}}" class="btn btn-primary">Ingresar</a>
+                      <a href="{{route('catechisms.index')}}" class="btn btn-primary">Ingresar</a>
                     </div>
                   </div>
             </div>

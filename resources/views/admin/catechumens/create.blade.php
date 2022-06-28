@@ -4,13 +4,13 @@
 
 
 @section('content_header')
-    <h1>Registrar Catecumeno</h1>
+    <h1 class="text-center">Registrar Catecumeno</h1>
 @stop
 
 @section('content')
 <div class="card container">
     <div class="card-body">
-      <h5 class="card-title">Datos:</h5>
+      <h5 class="card-title"></h5>
       <p class="card-text">
         <form action="{{route('catechumens.store')}}" method='post'>
             @csrf
@@ -31,7 +31,7 @@
 
             <div class="mb-3">
                 <label  class="form-label">Celular</label>
-                <input type="text" class="form-control" name="phone" >
+                <input type="tel" class="form-control" name="phone" >
             </div>
 
 
@@ -40,6 +40,22 @@
                 <input type="date" class="form-control" name="birth">
               </div>
              
+
+              <div class="mb-3">
+                <label  class="form-label">Bautismo</label>
+                <select name="baptism" class="form-control">
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label  class="form-label">Primera Comunión</label>
+                <select name="communion" class="form-control">
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+                </select>
+              </div>
 
               <div class="form-group row">
                 <div class="col-md-3">

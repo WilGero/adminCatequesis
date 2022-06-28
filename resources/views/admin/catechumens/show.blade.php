@@ -4,7 +4,7 @@
 
 
 @section('content_header')
-    <h1>Mostrar catecumeno</h1>
+    <h1 class="text-center">Mostrar catecumeno</h1>
 @stop
 
 @section('content')
@@ -13,8 +13,7 @@
         <div class="col-md-8">
             
             <div class="card">
-                <div class="card-header "><strong> Datos Personales de:  {{$catechumen->name}}</div></strong> 
-                
+                <div class="card-header "> </div>
                 <div class="card-body">
 
                         <div class="form-group row">
@@ -53,7 +52,19 @@
                             </div>
                         </div>
 
-                 
+                        <div class="form-group row">
+                            <label for="birth" class="col-md-4 col-form-label text-md-right">{{ __('Sacramento de Bautismo') }}</label>
+                            <div class="col-md-6">
+                                <label class="form-control">{{ $catechumen->baptism }}</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="birth" class="col-md-4 col-form-label text-md-right">{{ __('Sacramento de Primera Comunión') }}</label>
+                            <div class="col-md-6">
+                                <label class="form-control">{{ $catechumen->communion}}</label>
+                            </div>
+                        </div>
 
                       
 

@@ -264,7 +264,7 @@ return [
 
         [
             'text' => 'Catequesis',
-            'route'  => 'home',
+            'route'  =>  'catechisms.index',
             // 'icon' =>' fa-solid fa-children'      
             'icon' =>'fas fa-fw fa-home'     
         ],

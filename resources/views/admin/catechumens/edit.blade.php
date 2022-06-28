@@ -4,15 +4,15 @@
 
 
 @section('content_header')
-    <h1>Editar catecumeno</h1>
+    <h1 class="text-center">Editar catecumeno</h1>
 @stop
 
 @section('content')
 <div class="container card">
-    <div class="card-body">
-      <h5 class="card-title">Editar datos:</h5>
-      <p class="card-text">
-        <form action="{{route('catechumens.update',$catechumen)}}" method='post'>
+    <div class="card-body container">
+        <h5 class="card-title"></h5>
+      <p class="card-text container">
+        <form action="{{route('catechumens.update',$catechumen)}}" class="container" method='post'>
             @csrf
             @method('put')
             <div class="mb-3">
@@ -38,6 +38,33 @@
               <div class="mb-3">
                 <label  class="form-label">Fecha de Nacimiento</label>
                 <input type="date" class="form-control" name="birth" value="{{$catechumen->birth}}">
+              </div>
+
+              <div class="mb-3">
+                <label  class="form-label">Bautismo</label>
+                <select name="baptism" class="form-control" value>
+                @if ($catechumen->baptism=="si")
+                  <option selected value="si">SI</option>
+                  <option  value="no">NO</option>
+                @else
+                  <option value="si">SI</option>
+                  <option selected value="no">NO</option>
+                @endif  
+                    
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label  class="form-label">Primera Comunión</label>
+                <select name="communion" class="form-control">
+                @if ($catechumen->communion=="si")
+                  <option selected value="si">SI</option>
+                  <option  value="no">NO</option>
+                @else
+                  <option value="si">SI</option>
+                  <option selected value="no">NO</option>
+                @endif  
+                </select>
               </div>
              
               <div class="form-group row">

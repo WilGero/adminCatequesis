@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Catecumenos')
+@section('title', 'Catequesis')
 
 
 @section('content_header')
-    <h1 class="text-center">¡ BIENVENIDO A GESTIONAR CATECUMENO !</h1>
+    <h1 class="text-center">¡ BIENVENIDO A GESTIONAR CATEQUESIS !</h1>
 @stop
 
 @section('content')
@@ -14,43 +14,37 @@
  
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
      
-      <form action="{{route('catechumens.index')}}" class="d-flex" method="get">
+      <form action="{{route('catechisms.index')}}" class="d-flex" method="get">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="texto" value="{{$texto}}">
         <button class="btn btn-outline-info" type="submit">Buscar</button>
       </form>
-      <a href="{{route('catechumens.create')}}"><button class="btn btn-success m-4" type="submit">Registrar Catecumeno</button></a>
+      <a href="{{route('catechisms.create')}}"><button class="btn btn-success m-4" type="submit">Añadir tema</button></a>
     </div>
   </div>
 </nav>
 
 
-{{-- Lista de catecumenos --}}
+{{-- Lista de catequesis --}}
 
 
 <div class="card">
-  <div class="card-title text-center">Lista de Catecumenos</div>
+  <div class="card-title text-center">Temas para la catequesis</div>
     <div class="card-body">
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">id</th>
-                <th scope="col">Nombres</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">ci</th>
-                <th scope="col">Celular</th>
+                <th scope="col">ID</th>
+                <th scope="col">Titulo</th>
               </tr>
             </thead>
             <tbody>
               {{-- <tr> --}}
-                    @foreach($catechumens as $catechumen)
+                    @foreach($catechisms as $catechism)
                     <tr scope="row">
-                        <td>{{$catechumen->id}}</td>
-                        <td>{{$catechumen->name}}</td>
-                        <td>{{$catechumen->surname}}</td>
-                        <td>{{$catechumen->ci}}</td>
-                        <td>{{$catechumen->phone}}</td>
+                        <td>{{$catechism->id}}</td>
+                        <td>{{$catechism->title}}</td>
                         <td>
-                         <a href="{{route('catechumens.show',$catechumen)}}">
+                         <a href="{{route('catechisms.show',$catechism)}}">
                           <button type="button" class="btn btn-info">Mostrar</button>  
                         </a> 
                         </td>
@@ -62,7 +56,7 @@
                 @endforeach   
             </tbody>
           </table>
-          {{$catechumens->links()}}
+          {{$catechisms->links()}}
          
     </div>
   </div>

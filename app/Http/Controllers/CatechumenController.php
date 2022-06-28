@@ -49,6 +49,8 @@ class CatechumenController extends Controller
         $catechumen->ci=$request->ci;
         $catechumen->phone=$request->phone;
         $catechumen->birth=$request->birth;
+        $catechumen->baptism=$request->baptism;
+        $catechumen->communion=$request->communion;
         // $catechumen->
         // DB::raw('selec')
 
@@ -95,6 +97,8 @@ class CatechumenController extends Controller
         $catechumen->ci=$request->ci;
         $catechumen->phone=$request->phone;
         $catechumen->birth=$request->birth;
+        $catechumen->baptism=$request->baptism;
+        $catechumen->communion=$request->communion;
 
         $catechumen->save();
 

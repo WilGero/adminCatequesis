@@ -8,7 +8,27 @@
 @stop
 
 @section('content')
-<div class="card container">
+<div class="card">
+   <div class="card-body">
+      {!! Form::open(['route'=>'catechumens.store']) !!}
+        <div class="form-group">
+            {!! Form::label('name', 'Nombres') !!}
+            {!! Form::text('name', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre del catecúmeno']) !!}
+        </div>
+
+        <div class="form-group">
+          {!! Form::label('surname', 'Apellidos') !!}
+          {!! Form::text('surname', null, ['class'=>'form-control','placeholder'=>'Ingrese el apellido del catecúmeno']) !!}
+      </div>
+
+      {!! Form::close() !!}
+   </div>
+</div>
+
+
+
+
+{{-- <div class="card container">
     <div class="card-body">
       <h5 class="card-title"></h5>
       <p class="card-text">
@@ -70,14 +90,7 @@
         </form>
       </p>
     </div>
-  </div>
+  </div> --}}
 
 @stop
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop

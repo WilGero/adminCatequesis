@@ -254,6 +254,14 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        [
+            'text'        => 'Pantalla Principal',
+            'route'         => 'home',
+            'icon'        => 'fas fa-tachometer-alt fa-fw ',
+            'label'       => 4,
+            'label_color' => 'success',
+        ],
+
         ['header' => 'Vistas'],
         [
             'text' => 'Catecumenos',
@@ -266,7 +274,7 @@ return [
             'text' => 'Catequesis',
             'route'  =>  'catechisms.index',
             // 'icon' =>' fa-solid fa-children'      
-            'icon' =>'fas fa-fw fa-home'     
+            'icon' =>'fab fa-fw fa-buffer'     
         ],
 
         [
@@ -276,13 +284,7 @@ return [
             'icon' =>'fas fa-fw fa-home'     
         ],
 
-        // [
-        //     'text'        => 'pages',
-        //     'url'         => 'admin/pages',
-        //     'icon'        => 'far fa-fw fa-file',
-        //     'label'       => 4,
-        //     'label_color' => 'success',
-        // ],
+       
         // ['header' => 'Configuración'],
         // [
         //     'text' => 'profile',

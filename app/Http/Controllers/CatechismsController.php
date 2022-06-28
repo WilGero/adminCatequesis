@@ -48,7 +48,7 @@ class CatechismsController extends Controller
         foreach($catechumens as $catechumen)
             foreach($catechisms as $catechism)
                 $catechism->find($catechism->id)->catechumens()->detach($catechumen->id);
-                return $catechumen;
+        return $catechumen;
     }
 
     public function registrarAsistencia(Request $request,Catechumen $catechumen,$catechism){
@@ -58,8 +58,8 @@ class CatechismsController extends Controller
         //foreach($catechisms as $catechism)
             foreach($catechumens as $catechumen)
                 $catechisms->find($catechisms->id)->catechumens()->attach($catechumen->id);
-                $catechisms->asistencia=$request->asistencia;
-        return $catechism;
+               // $catechisms->asistencia=$request->asistencia;
+        return $catechisms;
     }
 
     /**

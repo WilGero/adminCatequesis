@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Parroquia</b>IC',
+    'logo' => '<b>CATEQUESIS</b>',
     'logo_img' => 'vendor/adminlte/dist/img/parroquia.jpeg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -69,7 +69,7 @@ return [
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => true,
-    'usermenu_profile_url' => true,
+    'usermenu_profile_url' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -84,7 +84,7 @@ return [
     */
 
     'layout_topnav' => null,
-    'layout_boxed' => true,
+    'layout_boxed' => null,
     'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
@@ -232,11 +232,11 @@ return [
             'topnav_right' => false,
         ],
 
-        [
-            'text' => 'Catecumenos',
-            'route' =>'catechumens.index',
-            'topnav' =>true
-        ],
+        // [
+        //     'text' => 'Catecumenos',
+        //     'route' =>'catechumens.index',
+        //     'topnav' =>null
+        // ],
 
         [
             'type'         => 'fullscreen-widget',
@@ -257,8 +257,7 @@ return [
         [
             'text'        => 'Pantalla Principal',
             'route'         => 'home',
-            'icon'        => 'fas fa-tachometer-alt fa-fw ',
-            'label'       => 4,
+            'icon' =>     'fas fa-fw fa-home',  
             'label_color' => 'success',
         ],
 
@@ -267,7 +266,8 @@ return [
             'text' => 'Catecumenos',
             'route'  => 'catechumens.index',
             // 'icon' =>' fa-solid fa-children'      
-            'icon' =>'fas fa-fw fa-home',  
+            'icon'        => 'fas fa-tachometer-alt fa-fw ',
+            // 'label'       => 4,
             'active'=>['catechumens*']   
         ],
 
@@ -279,13 +279,13 @@ return [
             'active'=>['catechisms*']      
         ],
 
-        [
-            'text' => 'Usuarios',
-            'route'  => 'home',
-            // 'icon' =>' fa-solid fa-children'      
-            'icon' =>'fas fa-fw fa-home'
+        // [
+        //     'text' => 'Usuarios',
+        //     'route'  => 'home',
+        //     'icon' =>'fa-solid fa-people-roof'      
+        //     //'icon' =>'fas fa-fw fa-home'
                 
-        ],
+        // ],
 
        
         // ['header' => 'Configuración'],

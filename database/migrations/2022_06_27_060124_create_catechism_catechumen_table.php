@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('catechism_id');
             $table->unsignedBigInteger('catechumen_id');
-            $table->boolean('asistencia');
+            $table->enum('asistencia',['falta','presente']);
             $table->foreign('catechism_id')->references('id')->on('catechisms')->unique()->ondelete('cascade');
             $table->foreign('catechumen_id')->references('id')->on('catechumens')->ondelete('cascade');
             $table->timestamps();

@@ -34,12 +34,14 @@
                           <td>{{$catechumen->name}}</td>
                           <td>{{$catechumen->surname}}</td>
                           <td>
-                            {{-- <select name="asistencia">
+                             <select name="asistencia" >
                                 <option value="presente">PRESENTE</option>
-                                <option value="permiso">PERMISO</option>
                                 <option value="falta">FALTA</option>    
-                            </select> --}}
-                            <input type="checkbox" class="form-control" name="">
+                            </select> 
+                           
+                             <!-- <input type="checkbox"  name="asistencia" value="presente" class="form-control"> -->
+                           
+                       
                             
                            {{-- <a href="{{route('catechumens.show',$catechumen)}}">
                             <button type="button" class="btn btn-info">Mostrar</button>  
@@ -61,7 +63,7 @@
                 <form action="{{route('refrescar')}}" method="POST">
                   @csrf
                   @method('delete')
-                  <button class="btn btn-info" type="submit">Refrescar</button>
+                  <button class="btn btn-info" type="submit">Borrar</button>
                 </form>
               </div>
               <div class="col-md-3">

@@ -43,20 +43,27 @@ class CatechumenController extends Controller
      */
     public function store(Request $request)
     {
-        $catechumen=new Catechumen();
-        $catechumen->name=$request->name;
-        $catechumen->surname=$request->surname;
-        $catechumen->ci=$request->ci;
-        $catechumen->phone=$request->phone;
-        $catechumen->birth=$request->birth;
-        $catechumen->baptism=$request->baptism;
-        $catechumen->communion=$request->communion;
+        $request->validate([
+            'name'=>'required',
+            'surname'=>'required',
+            'ci'=>'required',
+            'phone'=>'required',
+            'birth'=>'required'
+        ]);
+        // $catechumen=new Catechumen();
+        // $catechumen->name=$request->name;
+        // $catechumen->surname=$request->surname;
+        // $catechumen->ci=$request->ci;
+        // $catechumen->phone=$request->phone;
+        // $catechumen->birth=$request->birth;
+        // $catechumen->baptism=$request->baptism;
+        // $catechumen->communion=$request->communion;
         // $catechumen->
         // DB::raw('selec')
 
-        $catechumen->save();
-
-        return redirect()->route('catechumens.show',compact('catechumen'));  
+        // $catechumen->save();
+           $catechumen=Catechumen::create($request->all()); 
+        return redirect()->route('catechumens.show',compact('catechumen'))->with('info','Los datos del catecúmeno se registraron con éxito');  
     }
 
     /**
@@ -92,17 +99,25 @@ class CatechumenController extends Controller
      */
     public function update(Request $request,Catechumen $catechumen)
     {
-        $catechumen->name=$request->name;
-        $catechumen->surname=$request->surname;
-        $catechumen->ci=$request->ci;
-        $catechumen->phone=$request->phone;
-        $catechumen->birth=$request->birth;
-        $catechumen->baptism=$request->baptism;
-        $catechumen->communion=$request->communion;
+        $request->validate([
+            'name'=>'required',
+            'surname'=>'required',
+            'ci'=>'required',
+            'phone'=>'required',
+            'birth'=>'required'
+        ]);
+        // $catechumen->name=$request->name;
+        // $catechumen->surname=$request->surname;
+        // $catechumen->ci=$request->ci;
+        // $catechumen->phone=$request->phone;
+        // $catechumen->birth=$request->birth;
+        // $catechumen->baptism=$request->baptism;
+        // $catechumen->communion=$request->communion;
 
-        $catechumen->save();
+        // $catechumen->save();
+        $catechumen->update($request->all());
 
-        return redirect()->route('catechumens.show',compact('catechumen'));
+        return redirect()->route('catechumens.show',compact('catechumen'))->with('info','Los datos del catecúmeno se actualizaron con éxito');
     }
 
     /**
@@ -114,6 +129,6 @@ class CatechumenController extends Controller
     public function destroy(Catechumen $catechumen)
     {
         $catechumen->delete();
-        return redirect()->route('catechumens.index');
+        return redirect()->route('catechumens.index')->with('info','El registro se elimino con éxito');
     }
 }

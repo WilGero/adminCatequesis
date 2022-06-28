@@ -8,6 +8,13 @@
 @stop
 
 @section('content')
+
+@if (session('info'))
+    <div class="alert alert-warning">
+        <strong>{{session('info')}}</strong>
+    </div>
+@endif
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     
@@ -18,7 +25,7 @@
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="texto" value="{{$texto}}">
         <button class="btn btn-outline-info" type="submit">Buscar</button>
       </form>
-      <a href="{{route('catechisms.create')}}"><button class="btn btn-success m-4" type="submit">Añadir tema</button></a>
+      <a href="{{route('catechisms.create')}}"><button class="btn btn-success m-4" type="submit">Nueva catequesis</button></a>
     </div>
   </div>
 </nav>

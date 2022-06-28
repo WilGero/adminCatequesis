@@ -4,11 +4,28 @@
 
 
 @section('content_header')
-    <h1 class="text-center">Añadir Nuevo Tema</h1>
+    <h1 class="text-center">Nueva Catequesis</h1>
 @stop
 
 @section('content')
-<div class="card container">
+<div class="card">
+  <div class="card-body">
+     {!! Form::open(['route'=>'catechisms.store']) !!}
+     
+     @include('admin.catechisms.partials.form')
+       
+     <div class="form-group row" >
+       <div class="col-md-3">
+        {!! Form::submit('Registrar', ['class'=>'btn btn-success']) !!}
+       </div>
+        <div class="col-md-3">
+         <a  class="btn btn-secondary" href="{{route('catechisms.index')}}" role="button" >Cancelar</a>
+        </div>
+     </div>
+     {!! Form::close() !!}
+  </div>
+</div>
+{{-- <div class="card container">
     <div class="card-body">
       <h5 class="card-title"></h5>
       <p class="card-text">
@@ -43,14 +60,14 @@
         </form>
       </p>
     </div>
-  </div>
+  </div> --}}
 
 @stop
 
-@section('css')
+{{-- @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
 @section('js')
     <script> console.log('Hi!'); </script>
-@stop
+@stop --}}

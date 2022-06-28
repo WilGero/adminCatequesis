@@ -4,11 +4,31 @@
 
 
 @section('content_header')
-    <h1 class="text-center">Editar catecumeno</h1>
+    <h1 class="text-center">Editar catecúmeno</h1>
 @stop
 
 @section('content')
-<div class="container card">
+<div class="card">
+  <div class="card-body">
+     {!! Form::model($catechumen,['route'=>['catechumens.update',$catechumen],'method'=>'put']) !!}
+     
+     
+     @include('admin.catechumens.partials.form') 
+     
+     <div class="form-group row" >
+      <div class="col-md-3">
+       {!! Form::submit('Actualizar', ['class'=>'btn btn-success']) !!}
+      </div>
+       <div class="col-md-3">
+        <a  class="btn btn-secondary" href="{{route('catechumens.show',$catechumen)}}" role="button" >Cancelar</a>
+       </div>
+    </div>
+     
+     {!! Form::close() !!}
+  </div>
+</div>
+
+{{-- <div class="container card">
     <div class="card-body container">
         <h5 class="card-title"></h5>
       <p class="card-text container">
@@ -80,14 +100,7 @@
         </form>
       </p>
     </div>
-  </div>
+  </div> --}}
 
 @stop
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop

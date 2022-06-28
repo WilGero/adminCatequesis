@@ -53,18 +53,25 @@
                   @endforeach   
               </tbody>
             </table>
-            <button type="submit" class="btn btn-success">Registrar Asistencia</button>
+            <div class="form-group row">
+              <div class="col-md-3">
+                <button type="submit" class="btn btn-success">Registrar Asistencia</button>
+              </div>
+              <div class="col-md-3">
+                <form action="{{route('refrescar')}}" method="POST">
+                  @csrf
+                  @method('delete')
+                  <button class="btn btn-info" type="submit">Refrescar</button>
+                </form>
+              </div>
+              <div class="col-md-3">
+                <a  class="btn btn-secondary" href="{{route('catechisms.show',$catechism)}}" role="button" >Volver</a>
+               </div>
+            </div>
+           
            
         </form>
-        <div class="form-group row">
-          <div class="col-md-3">
-            <form action="{{route('refrescar')}}" method="POST">
-              @csrf
-              @method('delete')
-              <button class="btn btn-info" type="submit">Refrescar</button>
-            </form>
-          </div>
-        </div>
+        
             {{$catechumens->links()}}
            
       </div>

@@ -267,21 +267,24 @@ return [
             'text' => 'Catecumenos',
             'route'  => 'catechumens.index',
             // 'icon' =>' fa-solid fa-children'      
-            'icon' =>'fas fa-fw fa-home'     
+            'icon' =>'fas fa-fw fa-home',  
+            'active'=>['catechumens*']   
         ],
 
         [
             'text' => 'Catequesis',
             'route'  =>  'catechisms.index',
             // 'icon' =>' fa-solid fa-children'      
-            'icon' =>'fab fa-fw fa-buffer'     
+            'icon' =>'fab fa-fw fa-buffer',
+            'active'=>['catechisms*']      
         ],
 
         [
             'text' => 'Usuarios',
             'route'  => 'home',
             // 'icon' =>' fa-solid fa-children'      
-            'icon' =>'fas fa-fw fa-home'     
+            'icon' =>'fas fa-fw fa-home'
+                
         ],
 
        

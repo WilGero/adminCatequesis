@@ -81,13 +81,19 @@ class CatechismsController extends Controller
      */
     public function store(Request $request)
     {
-        $catechism=new Catechism();
-        $catechism->id=$request->id;
-        $catechism->title=$request->title;
-        $catechism->date=$request->date;
-        $catechism->save();
+        $request->validate([
+            'id'=>"required|unique:catechisms",
+            'title'=>"required",
+            'date'=>'required'
+        ]);
+        // $catechism=new Catechism();
+        // $catechism->id=$request->id;
+        // $catechism->title=$request->title;
+        // $catechism->date=$request->date;
+        // $catechism->save();
+        $catechism=Catechism::create($request->all());
 
-        return redirect()->route('catechisms.show',compact('catechism'));  
+        return redirect()->route('catechisms.show',compact('catechism'))->with('info','La catequesis fue creada con éxito');  
     }
 
     /**
@@ -127,13 +133,17 @@ class CatechismsController extends Controller
      */
     public function update(Request $request,Catechism $catechism)
     {
-        //
-        $catechism->id=$request->id;
-        $catechism->title=$request->title;
+        $request->validate([
+            'id'=>"required|unique:catechisms,id,$catechism->id",
+            'title'=>"required",
+            'date'=>'required'
+        ]);
+        // $catechism->id=$request->id;
+        // $catechism->title=$request->title;
 
-        $catechism->save();
-
-        return redirect()->route('catechisms.show',compact('catechism'));
+        // $catechism->save();
+        $catechism->update($request->all());
+        return redirect()->route('catechisms.show',compact('catechism'))->with('info','La catequesis fue actualizada con éxito');
     }
 
     /**
@@ -145,6 +155,6 @@ class CatechismsController extends Controller
     public function destroy(Catechism $catechism)
     {
         $catechism->delete();
-        return redirect()->route('catechisms.index');
+        return redirect()->route('catechisms.index')->with('info','La catequesis fue eliminada con éxito');
     }
 }

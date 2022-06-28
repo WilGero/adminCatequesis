@@ -11,16 +11,17 @@
 <div class="card">
    <div class="card-body">
       {!! Form::open(['route'=>'catechumens.store']) !!}
-        <div class="form-group">
-            {!! Form::label('name', 'Nombres') !!}
-            {!! Form::text('name', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre del catecúmeno']) !!}
+        
+      @include('admin.catechumens.partials.form')  
+
+      <div class="form-group row" >
+        <div class="col-md-3">
+         {!! Form::submit('Registrar', ['class'=>'btn btn-success']) !!}
         </div>
-
-        <div class="form-group">
-          {!! Form::label('surname', 'Apellidos') !!}
-          {!! Form::text('surname', null, ['class'=>'form-control','placeholder'=>'Ingrese el apellido del catecúmeno']) !!}
+         <div class="col-md-3">
+          <a  class="btn btn-secondary" href="{{route('catechumens.index')}}" role="button" >Cancelar</a>
+         </div>
       </div>
-
       {!! Form::close() !!}
    </div>
 </div>

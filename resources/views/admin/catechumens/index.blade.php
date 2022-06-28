@@ -8,6 +8,12 @@
 @stop
 
 @section('content')
+@if (session('info'))
+    <div class="alert alert-warning">
+        <strong>{{session('info')}}</strong>
+    </div>
+@endif
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     

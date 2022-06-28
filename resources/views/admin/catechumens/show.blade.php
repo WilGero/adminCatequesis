@@ -4,10 +4,16 @@
 
 
 @section('content_header')
-    <h1 class="text-center">Mostrar catecumeno</h1>
+    <h1 class="text-center">Mostrar catecúmeno</h1>
 @stop
 
 @section('content')
+@if (session('info'))
+    <div class="alert alert-success">
+        <strong>{{session('info')}}</strong>
+    </div>
+@endif
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -52,7 +58,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="birth" class="col-md-4 col-form-label text-md-right">{{ __('Sacramento de Bautismo') }}</label>
                             <div class="col-md-6">
                                 <label class="form-control">{{ $catechumen->baptism }}</label>
@@ -64,16 +70,16 @@
                             <div class="col-md-6">
                                 <label class="form-control">{{ $catechumen->communion}}</label>
                             </div>
-                        </div>
+                        </div> --}}
 
                       
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Edad') }}</label>
                             <div class="col-md-3">
                                 <label class="form-control"></label>
                             </div>
-                        </div>
+                        </div> --}}
 
                      
 
